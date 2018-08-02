@@ -8,7 +8,7 @@ Source file [../../../contracts/Library/ExecutionLib.sol](../../../contracts/Lib
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 /**
  * @title ExecutionLib
@@ -36,7 +36,7 @@ library ExecutionLib {
     {
         /// Should never actually reach this require check, but here in case.
         // BK Ok
-        require(self.gasPrice == tx.gasprice);
+        require(self.gasPrice <= tx.gasprice);
         /* solium-disable security/no-call-value */
         // BK Ok
         return self.toAddress.call.value(self.callValue).gas(self.callGas)(self.callData);

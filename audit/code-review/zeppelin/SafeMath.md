@@ -7,7 +7,7 @@ Source file [../../../contracts/zeppelin/SafeMath.sol](../../../contracts/zeppel
 <hr />
 
 ```javascript
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 
 /**

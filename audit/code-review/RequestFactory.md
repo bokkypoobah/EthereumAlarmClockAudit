@@ -8,7 +8,7 @@ Source file [../../contracts/RequestFactory.sol](../../contracts/RequestFactory.
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Next 6 Ok
 import "contracts/Interface/RequestFactoryInterface.sol";
@@ -35,7 +35,7 @@ contract RequestFactory is RequestFactoryInterface, CloneFactory {
     uint constant public TIMESTAMP_BUCKET_SIZE = 3600; //1h
 
     // BK Ok - Constructor
-    function RequestFactory(
+    constructor(
         address _transactionRequestCore
     ) 
         public 

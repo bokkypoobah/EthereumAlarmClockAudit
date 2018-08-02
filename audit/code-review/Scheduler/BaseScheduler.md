@@ -8,7 +8,7 @@ Source file [../../../contracts/Scheduler/BaseScheduler.sol](../../../contracts/
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Next 2 Ok
 import "contracts/Interface/RequestFactoryInterface.sol";

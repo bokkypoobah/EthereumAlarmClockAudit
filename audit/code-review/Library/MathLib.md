@@ -8,7 +8,7 @@ Source file [../../../contracts/Library/MathLib.sol](../../../contracts/Library/
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Ok
 library MathLib {

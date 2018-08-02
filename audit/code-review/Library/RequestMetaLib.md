@@ -8,7 +8,7 @@ Source file [../../../contracts/Library/RequestMetaLib.sol](../../../contracts/L
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 /**
  * @title RequestMetaLib

@@ -8,7 +8,7 @@ Source file [../../../contracts/Scheduler/TimestampScheduler.sol](../../../contr
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Next 2 Ok
 import "contracts/Library/RequestScheduleLib.sol";
@@ -26,7 +26,7 @@ contract TimestampScheduler is BaseScheduler {
      * @param _factoryAddress Address of the RequestFactory which creates requests for this scheduler.
      */
     // BK Ok
-    function TimestampScheduler(address _factoryAddress, address _feeRecipient) public {
+    constructor(address _factoryAddress, address _feeRecipient) public {
         // BK Ok
         require(_factoryAddress != 0x0);
 
@@ -34,8 +34,7 @@ contract TimestampScheduler is BaseScheduler {
         // BK Ok
         temporalUnit = RequestScheduleLib.TemporalUnit.Timestamp;
 
-        // Sets the factoryAddress variable found in SchedulerInterface contract.
-        // BK NOTE: factoryAddress is defined in BaseScheduler and not SchedulerInterface
+        // Sets the factoryAddress variable found in BaseScheduler contract.
         // BK Ok
         factoryAddress = _factoryAddress;
 

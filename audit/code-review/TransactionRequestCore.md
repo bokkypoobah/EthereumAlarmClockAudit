@@ -8,7 +8,7 @@ Source file [../../contracts/TransactionRequestCore.sol](../../contracts/Transac
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Next 3 Ok
 import "contracts/Library/RequestLib.sol";
@@ -39,8 +39,8 @@ contract TransactionRequestCore is TransactionRequestInterface {
      *  uintArgs[3]  - schedule.freezePeriod
      *  uintArgs[4]  - schedule.reservedWindowSize
      *  uintArgs[5]  - schedule.temporalUnit
-     *  uintArgs[7]  - schedule.executionWindowSize
-     *  uintArgs[6]  - schedule.windowStart
+     *  uintArgs[6]  - schedule.windowSize
+     *  uintArgs[7]  - schedule.windowStart
      *  uintArgs[8]  - txnData.callGas
      *  uintArgs[9]  - txnData.callValue
      *  uintArgs[10] - txnData.gasPrice
@@ -166,6 +166,14 @@ contract TransactionRequestCore is TransactionRequestInterface {
         // BK Ok
         return txnRequest.sendOwnerEther(recipient);
     }
+
+    /** Event duplication from RequestLib.sol. This is so
+     *  that these events are available on the contracts ABI.*/
+    // BK Next 4 Ok
+    event Aborted(uint8 reason);
+    event Cancelled(uint rewardPayment, uint measuredGasConsumption);
+    event Claimed();
+    event Executed(uint bounty, uint fee, uint measuredGasConsumption);
 }
 
 ```

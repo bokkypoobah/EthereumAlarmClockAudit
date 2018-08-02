@@ -8,7 +8,7 @@ Source file [../../../contracts/Library/PaymentLib.sol](../../../contracts/Libra
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Ok
 import "contracts/zeppelin/SafeMath.sol";
@@ -169,8 +169,8 @@ library PaymentLib {
     // BK NOTE - Comment with `maxMultiplier` may be outdated
     /*
      * Validation: ensure that the request endowment is sufficient to cover.
-     * - bounty * maxMultiplier
-     * - fee * maxMultiplier
+     * - bounty
+     * - fee
      * - gasReimbursment
      * - callValue
      */

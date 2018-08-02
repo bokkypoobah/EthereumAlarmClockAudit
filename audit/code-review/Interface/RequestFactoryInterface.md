@@ -8,7 +8,7 @@ Source file [../../../contracts/Interface/RequestFactoryInterface.sol](../../../
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Ok
 contract RequestFactoryInterface {

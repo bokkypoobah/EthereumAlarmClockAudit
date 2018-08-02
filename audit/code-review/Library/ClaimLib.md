@@ -8,17 +8,10 @@ Source file [../../../contracts/Library/ClaimLib.sol](../../../contracts/Library
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
-
-// BK NOTE - SafeMath is not used in this library
-// BK Ok
-import "contracts/zeppelin/SafeMath.sol";
+pragma solidity 0.4.24;
 
 // BK Ok
 library ClaimLib {
-    // BK NOTE - SafeMath is not used in this library
-    // BK Ok
-    using SafeMath for uint;
 
     // BK Next block Ok
     struct ClaimData {
@@ -35,7 +28,6 @@ library ClaimLib {
      * @param paymentModifier The payment modifier.
      */
     // BK Ok - Internal function, only called by RequestLib.claim(...)
-    // BK NOTE - `bool` return status is not set, and is not used in RequestLib.claim(...)
     function claim(
         ClaimData storage self, 
         uint8 _paymentModifier
@@ -48,6 +40,8 @@ library ClaimLib {
         self.claimDeposit = msg.value;
         // BK Ok
         self.paymentModifier = _paymentModifier;
+        // BK Ok
+        return true;
     }
 
     /*

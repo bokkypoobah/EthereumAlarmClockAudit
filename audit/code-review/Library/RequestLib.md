@@ -8,7 +8,7 @@ Source file [../../../contracts/Library/RequestLib.sol](../../../contracts/Libra
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Next 5 Ok
 import "contracts/Library/ClaimLib.sol";
@@ -48,7 +48,7 @@ library RequestLib {
         AfterCallWindow,    //3
         ReservedForClaimer, //4
         InsufficientGas,    //5
-        MismatchGasPrice    //6
+        TooLowGasPrice    //6
     }
 
     // BK Next 4 Ok - Events
@@ -389,6 +389,7 @@ library RequestLib {
          *         - throw (should be impossible)
          *  
          *  6. gasleft() == callGas
+         *  7. tx.gasprice >= txnData.gasPrice
          *
          *  +--------------------+
          *  | Phase 2: Execution |
@@ -454,9 +455,9 @@ library RequestLib {
             // BK Ok
             return false;
         // BK Ok - Tx gasPrice must match scheduled gasPrice 
-        } else if (self.txnData.gasPrice != tx.gasprice) {
+        } else if (self.txnData.gasPrice > tx.gasprice) {
             // BK Ok - Log event
-            emit Aborted(uint8(AbortReason.MismatchGasPrice));
+            emit Aborted(uint8(AbortReason.TooLowGasPrice));
             // BK Ok
             return false;
         }
@@ -540,7 +541,7 @@ library RequestLib {
         // Add the gas reimbursment amount to the bounty.
         // BK Ok
         self.paymentData.bountyOwed = measuredGasConsumption
-            .mul(tx.gasprice)
+            .mul(self.txnData.gasPrice)
             .add(self.paymentData.bountyOwed);
 
         // Log the bounty and fee. Otherwise it is non-trivial to figure
@@ -593,7 +594,7 @@ library RequestLib {
 
     // BK Ok - View function
     function getEXECUTION_GAS_OVERHEAD()
-        public view returns (uint)
+        public pure returns (uint)
     {
         // BK Ok
         return EXECUTION_GAS_OVERHEAD;
@@ -756,12 +757,10 @@ library RequestLib {
         // BK Ok
         require(isClaimable(self));
 
-        // BK Ok
-        self.claimData.claim(self.schedule.computePaymentModifier());
         // BK Ok - Log event
         emit Claimed();
         // BK Ok
-        claimed = true;
+        return self.claimData.claim(self.schedule.computePaymentModifier());
     }
 
     /*

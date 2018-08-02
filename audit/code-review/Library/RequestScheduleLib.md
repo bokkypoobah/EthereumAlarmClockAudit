@@ -8,7 +8,7 @@ Source file [../../../contracts/Library/RequestScheduleLib.sol](../../../contrac
 
 ```javascript
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 // BK Ok
 import "contracts/zeppelin/SafeMath.sol";
@@ -243,7 +243,7 @@ library RequestScheduleLib {
 
     // BK NOTE - Comment incorrect
     /*
-     *  Helper: Returns boolean if we are before the freeze period.
+     *  Helper: Returns boolean if we are before the claim window.
      */
     // BK NOTE - isBeforeClaimWindow = now < firstClaimBlock
     // BK NOTE - isBeforeClaimWindow = now < windowStart - freezePeriod - claimWindowSize

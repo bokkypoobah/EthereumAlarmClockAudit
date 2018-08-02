@@ -8,7 +8,7 @@ The Ethereum Alarm Clock (EAC) was originally created by Piper Merriam in 2015. 
 
 Bok Consulting Pty Ltd was commissioned to perform an audit on the Ethereum smart contracts built for the Ethereum Alarm Clock.
 
-This audit has been conducted on the EAC source code in commits [252a7a9](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/252a7a92bee984ff25bdb75189b3a4cc9748fadb), [c3f26bc](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/c3f26bc20eb902bf8da581df2cfaa21c122ea7a3) and [3685c4f](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/3685c4f3f19fd982f148abde4ed49e8fe19194e7).
+This audit has been conducted on the EAC source code in commits [252a7a9](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/252a7a92bee984ff25bdb75189b3a4cc9748fadb), [c3f26bc](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/c3f26bc20eb902bf8da581df2cfaa21c122ea7a3), [3685c4f](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/3685c4f3f19fd982f148abde4ed49e8fe19194e7) and [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8).
 
 The user interface for testing the EAC smart contracts on the Kovan testnet is at [http://chronologic-dev.s3-website-us-east-1.amazonaws.com/](http://chronologic-dev.s3-website-us-east-1.amazonaws.com/).
 
@@ -37,16 +37,25 @@ No potential vulnerabilities have been identified in the EAC smart contracts.
 
 ## Recommendations
 
-* [ ] **LOW IMPORTANCE** *scheduler/BlockScheduler.sol* and *scheduler/TimestampScheduler.sol* both have a comment `// Sets the factoryAddress variable found in SchedulerInterface contract.` but `factoryAddress` is defined in *scheduler/BaseScheduler.sol* and not in the *Interface/SchedulerInterface*. These comments should be updated
-* [ ] **LOW IMPORTANCE** The constructors for *RequestFactory.sol*, *Scheduler/BlockScheduler.sol*, *Scheduler/TimestampScheduler.sol* and *_examples/DelayedPayment.sol* should be updated to use the `constructor(...)` keyword introduced in [Solidity 0.4.21](https://github.com/ethereum/solidity/releases/tag/v0.4.22), if any source code is updated
-* [ ] **LOW IMPORTANCE** `RequestLib.getEXECUTION_GAS_OVERHEAD()` should be using the `pure` modifier instead of the `view` modifier, if any source code is updated
-* [ ] **LOW IMPORTANCE** Events in libraries are not automatically included in the ABI for contracts that call the library. The current workaround is to duplicate the events in the contracts that call the library. One [reference](https://ethereum.stackexchange.com/questions/11137/watching-events-defined-in-libraries). In EAC for example, RequestLib's `Aborted(...)`, `Cancelled(...)`, `Claimed()` and `Executed(...)` events are not available in the ABI for *TransactionRequestCore* - [test/TransactionRequestCore.js#L46](https://github.com/bokkypoobah/EthereumAlarmClockAudit/blob/acd8eeafc2006d7d9cdeb03c9c17d1a43b9a4994/audit/test/TransactionRequestCore.js#L46)
-* [ ] **LOW IMPORTANCE** The comments for `PaymentLib.validateEndowment(...)` referring to *maxMultiplier* may be out of date
-* [ ] **LOW IMPORTANCE** ClaimLib.claim(...) has a `bool` return status that is not set, and is not used in `RequestLib.claim(...)`
-* [ ] **LOW IMPORTANCE** The comment for `RequestScheduleLib.isBeforeClaimWindow(...)` refers to *freeze period* but should refer to *claim period*
-* [ ] **LOW IMPORTANCE** *SafeMath* is not used in *ClaimLib*
+* [x] **LOW IMPORTANCE** *scheduler/BlockScheduler.sol* and *scheduler/TimestampScheduler.sol* both have a comment `// Sets the factoryAddress variable found in SchedulerInterface contract.` but `factoryAddress` is defined in *scheduler/BaseScheduler.sol* and not in the *Interface/SchedulerInterface*. These comments should be updated
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** The constructors for *RequestFactory.sol*, *Scheduler/BlockScheduler.sol*, *Scheduler/TimestampScheduler.sol* and *_examples/DelayedPayment.sol* should be updated to use the `constructor(...)` keyword introduced in [Solidity 0.4.21](https://github.com/ethereum/solidity/releases/tag/v0.4.22), if any source code is updated
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** `RequestLib.getEXECUTION_GAS_OVERHEAD()` should be using the `pure` modifier instead of the `view` modifier, if any source code is updated
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** Events in libraries are not automatically included in the ABI for contracts that call the library. The current workaround is to duplicate the events in the contracts that call the library. One [reference](https://ethereum.stackexchange.com/questions/11137/watching-events-defined-in-libraries). In EAC for example, RequestLib's `Aborted(...)`, `Cancelled(...)`, `Claimed()` and `Executed(...)` events are not available in the ABI for *TransactionRequestCore* - [test/TransactionRequestCore.js#L46](https://github.com/bokkypoobah/EthereumAlarmClockAudit/blob/acd8eeafc2006d7d9cdeb03c9c17d1a43b9a4994/audit/test/TransactionRequestCore.js#L46)
+  * [x] Added in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** The comments for `PaymentLib.validateEndowment(...)` referring to *maxMultiplier* may be out of date
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** ClaimLib.claim(...) has a `bool` return status that is not set, and is not used in `RequestLib.claim(...)`
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** The comment for `RequestScheduleLib.isBeforeClaimWindow(...)` refers to *freeze period* but should refer to *claim period*
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **LOW IMPORTANCE** *SafeMath* is not used in *ClaimLib*
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
 * [ ] **LOW IMPORTANCE** Note that if there is a input parameter validation error, the `ValidationError(...)` events from *RequestFactory* will never get generated because `BaseScheduler.schedule(...)` will throw an error if the validation fails, and the event logs will not be persisted on the blockchain
-* [ ] **LOW IMPORTANCE** The index number for *uintArgs[7]* should be swapped with *uintArgs[6]* in the comment above `TransactionRequestCore.initialize(...)`
+* [x] **LOW IMPORTANCE** The index number for *uintArgs[7]* should be swapped with *uintArgs[6]* in the comment above `TransactionRequestCore.initialize(...)`
+  * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
 * [ ] **MEDIUM IMPORTANCE** Please review the issue below on a residual amount remaining in the *DelayedPayment* contract
 
 <br />

@@ -6,7 +6,7 @@ Source file [../../../contracts/_test/SimpleToken.sol](../../../contracts/_test/
 
 <hr />
 
-```javascript
+```solidity
 pragma solidity ^0.4.21;
 
 /// Super simple token contract that moves funds into the owner account on creation and

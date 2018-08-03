@@ -6,7 +6,7 @@ Source file [../../../contracts/Library/MathLib.sol](../../../contracts/Library/
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

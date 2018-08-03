@@ -6,7 +6,7 @@ Source file [../../../contracts/Scheduler/TimestampScheduler.sol](../../../contr
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

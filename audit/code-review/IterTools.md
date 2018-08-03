@@ -6,7 +6,7 @@ Source file [../../contracts/IterTools.sol](../../contracts/IterTools.sol).
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

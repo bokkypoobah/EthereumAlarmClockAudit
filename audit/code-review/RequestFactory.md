@@ -6,7 +6,7 @@ Source file [../../contracts/RequestFactory.sol](../../contracts/RequestFactory.
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

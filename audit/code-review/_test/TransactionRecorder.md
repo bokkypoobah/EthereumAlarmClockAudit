@@ -6,7 +6,7 @@ Source file [../../../contracts/_test/TransactionRecorder.sol](../../../contract
 
 <hr />
 
-```javascript
+```solidity
 pragma solidity ^0.4.21;
 
 contract TransactionRecorder {

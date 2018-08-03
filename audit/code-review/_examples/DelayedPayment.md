@@ -6,7 +6,7 @@ Source file [../../../contracts/_examples/DelayedPayment.sol](../../../contracts
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity ^0.4.21;
 

@@ -6,7 +6,7 @@ Source file [../../contracts/TransactionRequestCore.sol](../../contracts/Transac
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

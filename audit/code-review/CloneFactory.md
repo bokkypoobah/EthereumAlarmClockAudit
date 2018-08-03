@@ -4,6 +4,8 @@ Source file [../../contracts/CloneFactory.sol](../../contracts/CloneFactory.sol)
 
 The original source of this exact version of this code can be found at [https://github.com/optionality/clone-factory/blob/fe2ffc82f744b210dee89da9215dd6ebe2cb5b44/contracts/CloneFactory.sol](https://github.com/optionality/clone-factory/blob/fe2ffc82f744b210dee89da9215dd6ebe2cb5b44/contracts/CloneFactory.sol).
 
+This is the same contract as listed in [EIP-1167 - Implementation](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1167.md#implementation).
+
 <br />
 
 <hr />
@@ -259,7 +261,7 @@ $ ~/Downloads/geth-alltools-darwin-amd64-1.8.12-37685930/evm disasm clone.asm
 
 From [https://github.com/optionality/clone-factory/blob/fe2ffc82f744b210dee89da9215dd6ebe2cb5b44/clone-contract.js](https://github.com/optionality/clone-factory/blob/fe2ffc82f744b210dee89da9215dd6ebe2cb5b44/clone-contract.js):
 
-```javascript
+```solidity
 const evm = require('@optionality.io/evm-asm');
 
 module.exports = (bytes = 20) => evm.program([

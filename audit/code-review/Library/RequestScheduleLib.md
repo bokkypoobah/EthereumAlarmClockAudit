@@ -6,7 +6,7 @@ Source file [../../../contracts/Library/RequestScheduleLib.sol](../../../contrac
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

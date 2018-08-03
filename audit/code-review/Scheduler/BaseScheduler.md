@@ -6,7 +6,7 @@ Source file [../../../contracts/Scheduler/BaseScheduler.sol](../../../contracts/
 
 <hr />
 
-```javascript
+```solidity
 // BK Ok
 pragma solidity 0.4.24;
 

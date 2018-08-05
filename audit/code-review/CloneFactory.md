@@ -6,6 +6,10 @@ The original source of this exact version of this code can be found at [https://
 
 This is the same contract as listed in [EIP-1167 - Implementation](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1167.md#implementation).
 
+A test factory using CloneFactory has been deployed to Ropsten - the [AFactory](https://ropsten.etherscan.io/address/0x4dc90ef640c82be4f64628e83258f193446295c8#code) factory, the [Code](https://ropsten.etherscan.io/address/0x560f0c45cc562443b45dabc8638b94a795190e3c#code) template, and a [clone of Code](https://ropsten.etherscan.io/address/0x72950534a60bea1db4be1785c4411995426d36b7#code) where the source code is not verified on EtherScan.
+
+The [ContractProbe](https://ropsten.etherscan.io/address/0x75f09888af7c9bdfe15317c411dfb03636179a6d#code) from EIP-1167 above has been deployed to [0x75f09888af7c9bdfe15317c411dfb03636179a6d](https://ropsten.etherscan.io/address/0x75f09888af7c9bdfe15317c411dfb03636179a6d#code) on Ropsten, and can be used to find the original code on which the clones are based upon.
+
 <br />
 
 <hr />

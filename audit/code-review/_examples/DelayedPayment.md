@@ -8,7 +8,7 @@ Source file [../../../contracts/_examples/DelayedPayment.sol](../../../contracts
 
 ```solidity
 // BK Ok
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.24;
 
 // BK Ok
 import "contracts/Interface/SchedulerInterface.sol";
@@ -21,23 +21,39 @@ contract DelayedPayment {
     SchedulerInterface public scheduler;
     
     // BK Next 3 Ok
-    uint lockedUntil;
     address recipient;
-    address public scheduledTransaction;
+    address owner;
+    address public payment;
+
+    // BK Next 3 Ok
+    uint lockedUntil;
+    uint value;
+    uint twentyGwei = 20000000000 wei;
 
     // BK Ok
-    function DelayedPayment(
+    constructor(
         address _scheduler,
         uint    _numBlocks,
-        address _recipient
+        address _recipient,
+        uint _value
     )  public payable {
         // BK Next 3 Ok
         scheduler = SchedulerInterface(_scheduler);
         lockedUntil = block.number + _numBlocks;
         recipient = _recipient;
+        owner = msg.sender;
+        value = _value;
+
+        uint endowment = scheduler.computeEndowment(
+            twentyGwei,
+            twentyGwei,
+            200000,
+            0,
+            twentyGwei
+        );
 
         // BK Ok
-        scheduledTransaction = scheduler.schedule.value(0.1 ether)( // 0.1 ether is to pay for gas, bounty and fee
+        payment = scheduler.schedule.value(endowment)( // 0.1 ether is to pay for gas, bounty and fee
             this,                   // send to self
             "",                     // and trigger fallback function
             [
@@ -45,12 +61,14 @@ contract DelayedPayment {
                 0,                  // The amount of wei to be sent.
                 255,                // The size of the execution window.
                 lockedUntil,        // The start of the execution window.
-                20000000000 wei,    // The gasprice for the transaction (aka 20 gwei)
-                20000000000 wei,    // The fee included in the transaction.
-                20000000000 wei,         // The bounty that awards the executor of the transaction.
-                30000000000 wei     // The required amount of wei the claimer must send as deposit.
+                twentyGwei,    // The gasprice for the transaction (aka 20 gwei)
+                twentyGwei,    // The fee included in the transaction.
+                twentyGwei,         // The bounty that awards the executor of the transaction.
+                twentyGwei * 2     // The required amount of wei the claimer must send as deposit.
             ]
         );
+
+        assert(address(this).balance >= value);
     }
 
     // BK Ok
@@ -78,9 +96,15 @@ contract DelayedPayment {
         require(block.number >= lockedUntil);
         
         // BK Ok
-        recipient.transfer(address(this).balance);
+        recipient.transfer(value);
         // BK Ok
         return true;
+    }
+
+    function collectRemaining()
+        public returns (bool) 
+    {
+        owner.transfer(address(this).balance);
     }
 }
 ```

@@ -261,7 +261,7 @@ $ ~/Downloads/geth-alltools-darwin-amd64-1.8.12-37685930/evm disasm clone.asm
 
 <hr />
 
-## Updated `clone` Bytecode Generator
+## `clone` Bytecode Generator
 
 From [https://github.com/optionality/clone-factory/blob/fe2ffc82f744b210dee89da9215dd6ebe2cb5b44/clone-contract.js](https://github.com/optionality/clone-factory/blob/fe2ffc82f744b210dee89da9215dd6ebe2cb5b44/clone-contract.js):
 

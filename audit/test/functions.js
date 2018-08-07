@@ -442,13 +442,13 @@ function displayTxRequestDetails(msg, address, abi) {
   });
   executedEvents.stopWatching();
 
-  var logUintEvents = contract.LogUint({}, { fromBlock: txRequestFromBlock[address], toBlock: latestBlock });
-  i = 0;
-  logUintEvents.watch(function (error, result) {
-    console.log("RESULT: txRequest.LogUint " + i++ + " #" + result.blockNumber + " source=" + result.args.source +
-      " text=" + result.args.text + " value=" + result.args.value + " " + result.args.value.shift(-18));
-  });
-  logUintEvents.stopWatching();
+  // var logUintEvents = contract.LogUint({}, { fromBlock: txRequestFromBlock[address], toBlock: latestBlock });
+  // i = 0;
+  // logUintEvents.watch(function (error, result) {
+  //   console.log("RESULT: txRequest.LogUint " + i++ + " #" + result.blockNumber + " source=" + result.args.source +
+  //     " text=" + result.args.text + " value=" + result.args.value + " " + result.args.value.shift(-18));
+  // });
+  // logUintEvents.stopWatching();
 
   txRequestFromBlock[address] = latestBlock + 1;
 }

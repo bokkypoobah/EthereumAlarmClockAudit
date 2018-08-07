@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 import "Library/ClaimLib.sol";
 import "Library/ExecutionLib.sol";
@@ -32,14 +32,13 @@ library RequestLib {
         AfterCallWindow,    //3
         ReservedForClaimer, //4
         InsufficientGas,    //5
-        MismatchGasPrice    //6
+        TooLowGasPrice    //6
     }
 
     event Aborted(uint8 reason);
     event Cancelled(uint rewardPayment, uint measuredGasConsumption);
     event Claimed();
     event Executed(uint bounty, uint fee, uint measuredGasConsumption);
-    event LogUint(string source, string text, uint value);
 
     /**
      * @dev Validate the initialization parameters of a transaction request.
@@ -253,6 +252,7 @@ library RequestLib {
          *         - throw (should be impossible)
          *  
          *  6. gasleft() == callGas
+         *  7. tx.gasprice >= txnData.gasPrice
          *
          *  +--------------------+
          *  | Phase 2: Execution |
@@ -298,8 +298,8 @@ library RequestLib {
         } else if (self.claimData.isClaimed() && msg.sender != self.claimData.claimedBy && self.schedule.inReservedWindow()) {
             emit Aborted(uint8(AbortReason.ReservedForClaimer));
             return false;
-        } else if (self.txnData.gasPrice != tx.gasprice) {
-            emit Aborted(uint8(AbortReason.MismatchGasPrice));
+        } else if (self.txnData.gasPrice > tx.gasprice) {
+            emit Aborted(uint8(AbortReason.TooLowGasPrice));
             return false;
         }
 
@@ -316,11 +316,7 @@ library RequestLib {
         // Send the transaction...
         // The transaction is allowed to fail and the executing agent will still get the bounty.
         // `.sendTransaction()` will return false on a failed exeuction. 
-        emit LogUint("execute", "Before sendTransaction - request.balance", address(this).balance);
-        emit LogUint("execute", "Before sendTransaction - self.txnData.toAddress.balance", self.txnData.toAddress.balance);
         self.meta.wasSuccessful = self.txnData.sendTransaction();
-        emit LogUint("execute", "After sendTransaction - request.balance", address(this).balance);
-        emit LogUint("execute", "After sendTransaction - self.txnData.toAddress.balance", self.txnData.toAddress.balance);
 
         // +----------------+
         // | End: Execution |
@@ -329,14 +325,11 @@ library RequestLib {
         // | Begin: Accounting |
         // +-------------------+
 
-        emit LogUint("execute", "feeOwed before", self.paymentData.feeOwed);
-        emit LogUint("execute", "getFee()", self.paymentData.getFee());
         // Compute the fee amount
         if (self.paymentData.hasFeeRecipient()) {
             self.paymentData.feeOwed = self.paymentData.getFee()
                 .add(self.paymentData.feeOwed);
         }
-        emit LogUint("execute", "feeOwed after", self.paymentData.feeOwed);
 
         // Record this locally so that we can log it later.
         // `.sendFee()` below will change `self.paymentData.feeOwed` to 0 to prevent re-entrance.
@@ -364,7 +357,6 @@ library RequestLib {
             // Not claimed. Just add the full bounty.
             self.paymentData.bountyOwed = self.paymentData.getBounty().add(self.paymentData.bountyOwed);
         }
-        emit LogUint("execute", "bountyOwed before", self.paymentData.bountyOwed);
 
         // Take down the amount of gas used so far in execution to compensate the executing agent.
         uint measuredGasConsumption = startGas.sub(gasleft()).add(EXECUTE_EXTRA_GAS);
@@ -375,24 +367,18 @@ library RequestLib {
 
         // Add the gas reimbursment amount to the bounty.
         self.paymentData.bountyOwed = measuredGasConsumption
-            .mul(tx.gasprice)
+            .mul(self.txnData.gasPrice)
             .add(self.paymentData.bountyOwed);
-        emit LogUint("execute", "bountyOwed after", self.paymentData.bountyOwed);
 
         // Log the bounty and fee. Otherwise it is non-trivial to figure
         // out how much was payed.
         emit Executed(self.paymentData.bountyOwed, totalFeePayment, measuredGasConsumption);
     
         // Attempt to send the bounty. as with `.sendFee()` it may fail and need to be caled after execution.
-        emit LogUint("execute", "Before sendBounty - request.balance", address(this).balance);
-        emit LogUint("execute", "Before sendBounty - self.txnData.toAddress.balance", self.txnData.toAddress.balance);
         self.paymentData.sendBounty();
-        emit LogUint("execute", "After sendBounty - request.balance", address(this).balance);
-        emit LogUint("execute", "After sendBounty - self.txnData.toAddress.balance", self.txnData.toAddress.balance);
 
         // If any ether is left, send it back to the owner of the transaction request.
         _sendOwnerEther(self, self.meta.owner);
-        emit LogUint("execute", "After _sendOwnerEther - self.txnData.toAddress.balance", self.txnData.toAddress.balance);
 
         // +-----------------+
         // | End: Accounting |
@@ -425,7 +411,7 @@ library RequestLib {
     uint public constant CANCEL_EXTRA_GAS = 85000; // Check accuracy
 
     function getEXECUTION_GAS_OVERHEAD()
-        public view returns (uint)
+        public pure returns (uint)
     {
         return EXECUTION_GAS_OVERHEAD;
     }
@@ -549,10 +535,9 @@ library RequestLib {
         internal returns (bool claimed)
     {
         require(isClaimable(self));
-
-        self.claimData.claim(self.schedule.computePaymentModifier());
+        
         emit Claimed();
-        claimed = true;
+        return self.claimData.claim(self.schedule.computePaymentModifier());
     }
 
     /*

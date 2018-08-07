@@ -417,13 +417,14 @@ console.log("RESULT: ");
 var delayedPaymentMessage = "Schedule Delayed Payment";
 var numBlocks = 20;
 var value = new BigNumber(10).shift(18);
+var ethSent = new BigNumber("10.0158918932").shift(18);
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + delayedPaymentMessage + " ----------");
 var delayedPaymentContract = web3.eth.contract(delayedPaymentAbi);
 // console.log(JSON.stringify(delayedPaymentContract));
 var delayedPaymentTx = null;
 var delayedPaymentAddress = null;
-var delayedPayment = delayedPaymentContract.new(blockSchedulerAddress, numBlocks, paymentRecipient, {from: scheduleCreator, data: delayedPaymentBin, value: value, gas: 6000000, gasPrice: defaultGasPrice},
+var delayedPayment = delayedPaymentContract.new(blockSchedulerAddress, numBlocks, paymentRecipient, value, {from: scheduleCreator, data: delayedPaymentBin, value: ethSent, gas: 6000000, gasPrice: defaultGasPrice},
   function(e, contract) {
     if (!e) {
       if (!contract.address) {
@@ -440,7 +441,7 @@ var delayedPayment = delayedPaymentContract.new(blockSchedulerAddress, numBlocks
 );
 while (txpool.status.pending > 0) {
 }
-console.log("RESULT: delayedPayment.scheduledTransaction=" + delayedPayment.scheduledTransaction());
+console.log("RESULT: delayedPayment.payment=" + delayedPayment.payment());
 var delayedPaymentRequestAddress = getRequestFactoryListing();
 console.log("DATA: delayedPaymentRequestAddress=\"" + delayedPaymentRequestAddress + "\";");
 addAccount(delayedPaymentRequestAddress, "DelayedPaymentRequest");
@@ -458,14 +459,14 @@ var claim1Message = "Claim Delayed Payment";
 var stake = new BigNumber(0.1).shift(18);
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + claim1Message + " ----------");
-var delayedPaymentTxRequest = eth.contract(transactionRequestCoreAbi).at(delayedPayment.scheduledTransaction());
+var delayedPaymentTxRequest = eth.contract(transactionRequestCoreAbi).at(delayedPayment.payment());
 var claim1_1Tx = delayedPaymentTxRequest.claim({from: executor, value: stake, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 printBalances();
 failIfTxStatusError(claim1_1Tx, claim1Message);
 printTxData("claim1_1Tx", claim1_1Tx);
-displayTxRequestDetails(claim1Message, delayedPayment.scheduledTransaction(), transactionRequestCoreAbi);
+displayTxRequestDetails(claim1Message, delayedPayment.payment(), transactionRequestCoreAbi);
 console.log("RESULT: ");
 
 
@@ -483,21 +484,21 @@ while (txpool.status.pending > 0) {
 printBalances();
 failIfTxStatusError(execute1_1Tx, execute1Message);
 printTxData("execute1_1Tx", execute1_1Tx);
-displayTxRequestDetails(execute1Message, delayedPayment.scheduledTransaction(), transactionRequestCoreAbi);
+displayTxRequestDetails(execute1Message, delayedPayment.payment(), transactionRequestCoreAbi);
 console.log("RESULT: ");
 
 
 // -----------------------------------------------------------------------------
-var sendOwnerEther1Message = "Send Owner Ethers";
+var collectRemaining1Message = "Send Owner Ethers";
 // -----------------------------------------------------------------------------
-console.log("RESULT: ---------- " + sendOwnerEther1Message + " ----------");
-var sendOwnerEther1_1Tx = delayedPaymentTxRequest.sendOwnerEther(scheduleCreator, {from: scheduleCreator, gas: 400000, gasPrice: defaultGasPrice});
+console.log("RESULT: ---------- " + collectRemaining1Message + " ----------");
+var collectRemaining1_1Tx = delayedPayment.collectRemaining({from: scheduleCreator, gas: 400000, gasPrice: defaultGasPrice});
 while (txpool.status.pending > 0) {
 }
 printBalances();
-failIfTxStatusError(sendOwnerEther1_1Tx, sendOwnerEther1Message);
-printTxData("sendOwnerEther1_1Tx", sendOwnerEther1_1Tx);
-displayTxRequestDetails(sendOwnerEther1Message, delayedPayment.scheduledTransaction(), transactionRequestCoreAbi);
+failIfTxStatusError(collectRemaining1_1Tx, sendOwnerEther1Message);
+printTxData("collectRemaining1_1Tx", collectRemaining1_1Tx);
+displayTxRequestDetails(collectRemaining1Message, delayedPayment.payment(), transactionRequestCoreAbi);
 console.log("RESULT: ");
 
 

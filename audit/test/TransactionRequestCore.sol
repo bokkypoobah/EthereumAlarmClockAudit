@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 import "Library/RequestLib.sol";
 import "Library/RequestScheduleLib.sol";
@@ -10,13 +10,6 @@ contract TransactionRequestCore is TransactionRequestInterface {
 
     RequestLib.Request txnRequest;
     bool private initialized = false;
-
-    // BK TEST - Adding events from RequestLib
-    event Aborted(uint8 reason);
-    event Cancelled(uint rewardPayment, uint measuredGasConsumption);
-    event Claimed();
-    event Executed(uint bounty, uint fee, uint measuredGasConsumption);
-    event LogUint(string source, string text, uint value);
 
     /*
      *  addressArgs[0] - meta.createdBy
@@ -30,8 +23,8 @@ contract TransactionRequestCore is TransactionRequestInterface {
      *  uintArgs[3]  - schedule.freezePeriod
      *  uintArgs[4]  - schedule.reservedWindowSize
      *  uintArgs[5]  - schedule.temporalUnit
-     *  uintArgs[7]  - schedule.executionWindowSize
-     *  uintArgs[6]  - schedule.windowStart
+     *  uintArgs[6]  - schedule.windowSize
+     *  uintArgs[7]  - schedule.windowStart
      *  uintArgs[8]  - txnData.callGas
      *  uintArgs[9]  - txnData.callValue
      *  uintArgs[10] - txnData.gasPrice
@@ -129,4 +122,11 @@ contract TransactionRequestCore is TransactionRequestInterface {
     function sendOwnerEther(address recipient) public returns (bool) {
         return txnRequest.sendOwnerEther(recipient);
     }
+
+    /** Event duplication from RequestLib.sol. This is so
+     *  that these events are available on the contracts ABI.*/
+    event Aborted(uint8 reason);
+    event Cancelled(uint rewardPayment, uint measuredGasConsumption);
+    event Claimed();
+    event Executed(uint bounty, uint fee, uint measuredGasConsumption);
 }

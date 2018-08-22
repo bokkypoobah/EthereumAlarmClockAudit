@@ -22,13 +22,11 @@ module.exports = (deployer, network) => {
   console.log(`${"-".repeat(30)}
 NOW DEPLOYING THE ETHEREUM ALARM CLOCK CONTRACTS...\n`)
 
-  deployer.deploy([
-    [MathLib, { gas: 250000 }],
-    [IterTools, { gas: 250000 }],
-    [ExecutionLib, { gas: 250000 }],
-    [RequestMetaLib, { gas: 250000 }],
-    [SafeMath, { gas: 250000 }]
-  ])
+  deployer.deploy(MathLib, { gas: 250000 })
+    .then(() => deployer.deploy(IterTools, { gas: 250000 }))
+    .then(() => deployer.deploy(ExecutionLib, { gas: 250000 }))
+    .then(() => deployer.deploy(RequestMetaLib, { gas: 250000 }))
+    .then(() => deployer.deploy(SafeMath, { gas: 250000 }))
     .then(() => {
       deployer.link(SafeMath, ClaimLib)
 
@@ -75,7 +73,7 @@ NOW DEPLOYING THE ETHEREUM ALARM CLOCK CONTRACTS...\n`)
       deployer.link(PaymentLib, RequestFactory)
       deployer.link(RequestLib, RequestFactory)
       deployer.link(SafeMath, RequestFactory)
-      return deployer.deploy(RequestFactory, TransactionRequestCore.address, { gas: 1500000 })
+      return deployer.deploy(RequestFactory, TransactionRequestCore.address, { gas: 1900000 })
     })
     .then(() => {
       deployer.link(RequestScheduleLib, BaseScheduler)

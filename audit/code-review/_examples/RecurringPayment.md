@@ -7,7 +7,7 @@ Source file [../../../contracts/_examples/RecurringPayment.sol](../../../contrac
 <hr />
 
 ```solidity
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 import "contracts/Interface/SchedulerInterface.sol";
 

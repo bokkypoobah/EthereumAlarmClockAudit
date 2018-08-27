@@ -7,7 +7,7 @@ Source file [../../../contracts/_test/Proxy.sol](../../../contracts/_test/Proxy.
 <hr />
 
 ```solidity
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 import "contracts/Interface/SchedulerInterface.sol";
 import "contracts/Interface/TransactionRequestInterface.sol";

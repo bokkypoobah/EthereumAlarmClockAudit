@@ -7,7 +7,7 @@ Source file [../../../contracts/_test/TransactionRecorder.sol](../../../contract
 <hr />
 
 ```solidity
-pragma solidity ^0.4.21;
+pragma solidity 0.4.24;
 
 contract TransactionRecorder {
     address owner;

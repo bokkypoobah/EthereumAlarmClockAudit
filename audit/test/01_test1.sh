@@ -87,14 +87,15 @@ printf "END_DATE                  = '$END_DATE' '$END_DATE_S'\n" | tee -a $TEST1
 # Make copy of SOL file and modify start and end times ---
 `cp -rp $SOURCEDIR/* .`
 `cp -rp modifiedContracts/* .`
+`cp -rp additionalContracts/* .`
 
 # --- Modify parameters ---
-# `perl -pi -e "s/START_DATE \= 1525132800.*$/START_DATE \= $START_DATE; \/\/ $START_DATE_S/" $CROWDSALESOL`
-# `perl -pi -e "s/endDate \= 1527811200;.*$/endDate \= $END_DATE; \/\/ $END_DATE_S/" $CROWDSALESOL`
+`perl -pi -e "s/openzeppelin-solidity\/contracts\/lifecycle\///" RequestFactory.sol`
 `perl -pi -e "s/contracts\///" *.sol`
 `perl -pi -e "s/contracts\///" _examples/*.sol`
 `perl -pi -e "s/contracts\///" Library/*.sol`
 `perl -pi -e "s/contracts\///" Scheduler/*.sol`
+`perl -pi -e "s/\.\.\/ownership\///" Pausable.sol`
 
 DIFFS1=`diff -r -x '*.js' -x '*.json' -x '*.txt' -x 'testchain' -x '*.md' $SOURCEDIR .`
 echo "--- Differences $SOURCEDIR/$REQUESTFACTORYSOL $REQUESTFACTORYSOL ---" | tee -a $TEST1OUTPUT
@@ -126,6 +127,7 @@ loadScript("$BLOCKSCHEDULERJS");
 loadScript("$TIMESTAMPSCHEDULERJS");
 loadScript("$TESTCONTRACT1JS");
 loadScript("functions.js");
+
 
 var mathLibAbi = JSON.parse(mathLibOutput.contracts["$LIBDIR/$MATHLIBSOL:MathLib"].abi);
 var mathLibBin = "0x" + mathLibOutput.contracts["$LIBDIR/$MATHLIBSOL:MathLib"].bin;
@@ -475,7 +477,7 @@ waitUntilBlock("Wait to execute", eth.getTransaction(delayedPaymentTx).blockNumb
 
 // -----------------------------------------------------------------------------
 var execute1Message = "Execute Delayed Payment";
-var gasPrice = web3.toWei(20, "gwei");
+var gasPrice = web3.toWei(200, "gwei");
 // -----------------------------------------------------------------------------
 console.log("RESULT: ---------- " + execute1Message + " ----------");
 var execute1_1Tx = delayedPaymentTxRequest.execute({from: executor, gas: 400000, gasPrice: gasPrice});
@@ -496,7 +498,7 @@ var collectRemaining1_1Tx = delayedPayment.collectRemaining({from: scheduleCreat
 while (txpool.status.pending > 0) {
 }
 printBalances();
-failIfTxStatusError(collectRemaining1_1Tx, sendOwnerEther1Message);
+failIfTxStatusError(collectRemaining1_1Tx, collectRemaining1Message);
 printTxData("collectRemaining1_1Tx", collectRemaining1_1Tx);
 displayTxRequestDetails(collectRemaining1Message, delayedPayment.payment(), transactionRequestCoreAbi);
 console.log("RESULT: ");

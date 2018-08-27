@@ -1,20 +1,20 @@
 # Ethereum Alarm Clock Smart Contract Audit
 
-Status: Work in progress
-
 ## Summary
 
 The Ethereum Alarm Clock (EAC) was originally created by Piper Merriam in 2015. [Chronologic](http://chronologic.network/) have been [working with Piper Merriam to enhance EAC](https://blog.chronologic.network/announcing-the-ethereum-alarm-clock-chronologic-partnership-b3d7545bea3b).
 
 Bok Consulting Pty Ltd was commissioned to perform an audit on the Ethereum smart contracts built for the Ethereum Alarm Clock.
 
-This audit has been conducted on the EAC source code in commits [252a7a9](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/252a7a92bee984ff25bdb75189b3a4cc9748fadb), [c3f26bc](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/c3f26bc20eb902bf8da581df2cfaa21c122ea7a3), [3685c4f](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/3685c4f3f19fd982f148abde4ed49e8fe19194e7) and [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8).
+This audit has been conducted on the EAC source code in commits [252a7a9](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/252a7a92bee984ff25bdb75189b3a4cc9748fadb), [c3f26bc](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/c3f26bc20eb902bf8da581df2cfaa21c122ea7a3), [3685c4f](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/3685c4f3f19fd982f148abde4ed49e8fe19194e7), [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8) and [1da981c](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/1da981ce4c53b08e9db66a0e398424949adf9b16).
 
 The user interface for testing the EAC smart contracts on the Kovan testnet is at [http://chronologic-dev.s3-website-us-east-1.amazonaws.com/](http://chronologic-dev.s3-website-us-east-1.amazonaws.com/).
 
 The documentation for the EAC is at [https://ethereum-alarm-clock.readthedocs.io/en/latest/index.html](https://ethereum-alarm-clock.readthedocs.io/en/latest/index.html).
 
 No potential vulnerabilities have been identified in the EAC smart contracts.
+
+There is one outstanding **LOW IMPORTANCE** issue to resolve to improve the *RecurringPayment* example and Chronologic have responded that this will be completed in the near future.
 
 <br />
 
@@ -53,10 +53,13 @@ No potential vulnerabilities have been identified in the EAC smart contracts.
   * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
 * [x] **LOW IMPORTANCE** *SafeMath* is not used in *ClaimLib*
   * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
-* [ ] **LOW IMPORTANCE** Note that if there is a input parameter validation error, the `ValidationError(...)` events from *RequestFactory* will never get generated because `BaseScheduler.schedule(...)` will throw an error if the validation fails, and the event logs will not be persisted on the blockchain
 * [x] **LOW IMPORTANCE** The index number for *uintArgs[7]* should be swapped with *uintArgs[6]* in the comment above `TransactionRequestCore.initialize(...)`
   * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
-* [ ] **MEDIUM IMPORTANCE** Please review the issue below on a residual amount remaining in the *DelayedPayment* contract
+* [x] **MEDIUM IMPORTANCE** Please review the issue below on a residual amount remaining in the *DelayedPayment* contract
+  * [x] Resolved in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+* [x] **NOTE** Note that if there is a input parameter validation error, the `ValidationError(...)` events from *RequestFactory* will never get generated because `BaseScheduler.schedule(...)` will throw an error if the validation fails, and the event logs will not be persisted on the blockchain
+* [ ] **LOW IMPORTANCE** The *RecurringPayment* example contract will need to be updated to remove the same residual amount issue as already resolved in the *DelayedPayment* contract
+  * [ ] Chronologic have responded that this will be completed in the near future
 
 <br />
 
@@ -166,6 +169,10 @@ This 0.095453840800000000 ETH amount comes from `RequestLib.execute(...)` sectio
 
 This residual can only be sent to the *Payment Recipient* by executing `DelayedPayment.payout()` after the execution period.
 
+Resolution:
+
+* [x] Resolved in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
+
 ### ChronoLogic comment
 
 The residual value on the `DelayedPayment` contract is the remaining value send back by the scheduler afer execution. To improve the UX we've modified the example to:
@@ -174,6 +181,7 @@ The residual value on the `DelayedPayment` contract is the remaining value send 
 * added `value` to indicate the exact amount of ETH to be sent to the receipient
 
 All changes available in PR https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/pull/148
+
 <br />
 
 <hr />
@@ -269,10 +277,9 @@ Check exit points for ethers:
 * [ ] Library/RequestLib.sol: rewardBenefactor.transfer(rewardOwed);
 * [ ] Library/RequestLib.sol: return recipient.send(ownerRefund);
 
-#### Test And Examples
+#### Examples
 * [ ] _examples/DelayedPayment.sol: recipient.transfer(address(this).balance);
 * [ ] _examples/RecurringPayment.sol: recipient.transfer(paymentValue);
-* [ ] _test/Proxy.sol: receipient.transfer(msg.value);
 
 <br />
 
@@ -387,4 +394,4 @@ Library/RequestLib.sol:412:5: Warning: Function state mutability can be restrict
 
 <br />
 
-(c) BokkyPooBah / Bok Consulting Pty Ltd for Ethereum Alarm Clock and Chronologic - Aug 1 2018. The MIT Licence.
+(c) BokkyPooBah / Bok Consulting Pty Ltd for Ethereum Alarm Clock and Chronologic - Aug 27 2018. The MIT Licence.

@@ -32,10 +32,10 @@
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
@@ -44,10 +44,10 @@ PASS Deploy Libraries #1 - MathLib
 PASS Deploy Libraries #1 - PaymentLib
 PASS Deploy Libraries #1 - RequestScheduleLib
 PASS Deploy Libraries #1 - IterTools
-mathLibTx status=0x1 Success gas=6000000 gasUsed=129906 costETH=0.000259812 costUSD=0.1131870978 @ ETH/USD=435.65 gasPrice=2 gwei block=2607 txIx=0 txId=0x3780dc4e7c2882076b454ac0197fd7128acb847d1e22fc845b1f73040e5b215b @ 1533661699 Tue, 07 Aug 2018 17:08:19 UTC
-paymentLibTx status=0x1 Success gas=6000000 gasUsed=163606 costETH=0.000327212 costUSD=0.1425499078 @ ETH/USD=435.65 gasPrice=2 gwei block=2607 txIx=1 txId=0xf4561a1e96cb05b9658c27296ccdb4e5b3fa40a0ae8777668d942770879d75ae @ 1533661699 Tue, 07 Aug 2018 17:08:19 UTC
-requestScheduleLibTx status=0x1 Success gas=6000000 gasUsed=167778 costETH=0.000335556 costUSD=0.1461849714 @ ETH/USD=435.65 gasPrice=2 gwei block=2607 txIx=2 txId=0x076fd7bf0009f0c4b44a617fbd66d7e9b5c9f5bce1cb3ced891418dfa78295ef @ 1533661699 Tue, 07 Aug 2018 17:08:19 UTC
-iterToolsTx status=0x1 Success gas=6000000 gasUsed=123532 costETH=0.000247064 costUSD=0.1076334316 @ ETH/USD=435.65 gasPrice=2 gwei block=2607 txIx=3 txId=0xdb6855d98ff7a0a52a19d3d995dc486d5d77ae8194ab9a89651119ff2841ba63 @ 1533661699 Tue, 07 Aug 2018 17:08:19 UTC
+mathLibTx status=0x1 Success gas=6000000 gasUsed=129906 costETH=0.000259812 costUSD=0.1131870978 @ ETH/USD=435.65 gasPrice=2 gwei block=1116 txIx=0 txId=0xf766e523fa0c4c51579d802e272916a37e20234689be93c4e268699b36ad76fb @ 1535352592 Mon, 27 Aug 2018 06:49:52 UTC
+paymentLibTx status=0x1 Success gas=6000000 gasUsed=163606 costETH=0.000327212 costUSD=0.1425499078 @ ETH/USD=435.65 gasPrice=2 gwei block=1116 txIx=1 txId=0x5d33dd0be304d4960b7795de0cf3526266af80943d06117df9d8da9e2c1364b3 @ 1535352592 Mon, 27 Aug 2018 06:49:52 UTC
+requestScheduleLibTx status=0x1 Success gas=6000000 gasUsed=167778 costETH=0.000335556 costUSD=0.1461849714 @ ETH/USD=435.65 gasPrice=2 gwei block=1116 txIx=2 txId=0x1a678dc0ce434577268ceee05db168c647b9599481925f5a71f2301205efc450 @ 1535352592 Mon, 27 Aug 2018 06:49:52 UTC
+iterToolsTx status=0x1 Success gas=6000000 gasUsed=123532 costETH=0.000247064 costUSD=0.1076334316 @ ETH/USD=435.65 gasPrice=2 gwei block=1116 txIx=3 txId=0xd0bc6e44f0570a7fa2364a6492c4145269b1802f4d03dbe42b79fa5adaff4294 @ 1535352592 Mon, 27 Aug 2018 06:49:52 UTC
 
 ---------- Deploy Libraries #2 ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
@@ -64,17 +64,17 @@ iterToolsTx status=0x1 Success gas=6000000 gasUsed=123532 costETH=0.000247064 co
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Deploy Libraries #2 - RequestLib
-requestLibTx status=0x1 Success gas=6000000 gasUsed=1343529 costETH=0.002687058 costUSD=1.1706168177 @ ETH/USD=435.65 gasPrice=2 gwei block=2609 txIx=0 txId=0x80aa1abab2ae4d49b3949c16fd7674f27cbcf3521445b61076894379e651515a @ 1533661701 Tue, 07 Aug 2018 17:08:21 UTC
+requestLibTx status=0x1 Success gas=6000000 gasUsed=1343529 costETH=0.002687058 costUSD=1.1706168177 @ ETH/USD=435.65 gasPrice=2 gwei block=1118 txIx=0 txId=0x39aaaf5059b77ffb57159e8feefe1a28051affd76d56a47f9d0cb0ef1a3dff29 @ 1535352594 Mon, 27 Aug 2018 06:49:54 UTC
 
 ---------- Deploy TransactionRequestCore ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
@@ -91,24 +91,24 @@ requestLibTx status=0x1 Success gas=6000000 gasUsed=1343529 costETH=0.002687058 
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Deploy TransactionRequestCore - TransactionRequestCore
-transactionRequestCoreTx status=0x1 Success gas=6000000 gasUsed=1550228 costETH=0.003100456 costUSD=1.3507136564 @ ETH/USD=435.65 gasPrice=2 gwei block=2611 txIx=0 txId=0x10b5358a9455628c96bf021f9fce4a941be7d2e18f888ecd2239393a84acd8df @ 1533661703 Tue, 07 Aug 2018 17:08:23 UTC
+transactionRequestCoreTx status=0x1 Success gas=6000000 gasUsed=1550228 costETH=0.003100456 costUSD=1.3507136564 @ ETH/USD=435.65 gasPrice=2 gwei block=1120 txIx=0 txId=0x803c1f9501af9ec6b5caeeab3d9a956a310364f4de7dd461f9d08b7dc66cacac @ 1535352596 Mon, 27 Aug 2018 06:49:56 UTC
 
 ---------- Deploy RequestFactory ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.008591664000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.008591664000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.009045606000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.009045606000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2 - Fee Recipient
  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #4 - Payment Recipient
@@ -119,25 +119,25 @@ transactionRequestCoreTx status=0x1 Success gas=6000000 gasUsed=1550228 costETH=
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
-18 0x8ec74bd85e826da968766d2e57e101bf84f97abe        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+18 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Deploy RequestFactory - RequestFactory
-requestFactoryTx status=0x1 Success gas=6000000 gasUsed=817253 costETH=0.001634506 costUSD=0.7120725389 @ ETH/USD=435.65 gasPrice=2 gwei block=2613 txIx=0 txId=0x9cde803c6457b5d505e5d75d124c702c1d567636b35f27f9140b2ed3cf482586 @ 1533661705 Tue, 07 Aug 2018 17:08:25 UTC
+requestFactoryTx status=0x1 Success gas=6000000 gasUsed=1044224 costETH=0.002088448 costUSD=0.9098323712 @ ETH/USD=435.65 gasPrice=2 gwei block=1122 txIx=0 txId=0x4bc7b7a00a65ff431dc98c4f110fc9168d1f6fb298016306637e5a64faecad9f @ 1535352598 Mon, 27 Aug 2018 06:49:58 UTC
 
 ---------- Deploy Schedulers ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.010812672000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.010812672000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.011266614000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.011266614000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2 - Fee Recipient
  3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #4 - Payment Recipient
@@ -148,35 +148,35 @@ requestFactoryTx status=0x1 Success gas=6000000 gasUsed=817253 costETH=0.0016345
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
-18 0x8ec74bd85e826da968766d2e57e101bf84f97abe        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
-19 0x035297a53be1d92aae03595bd3dc98e804c0b41d        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
-20 0x21418566cfdcfd0bc9d55218032cc7ac18f746e3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+18 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
+19 0x611d3a5ac803dfb0acc68264d83538fef62fc5f8        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
+20 0x24ad1371437980d21a8ebf2e46a824b860a6d47c        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Deploy Schedulers - BlockScheduler
 PASS Deploy Schedulers - TimestampScheduler
-blockSchedulerTx status=0x1 Success gas=6000000 gasUsed=555252 costETH=0.001110504 costUSD=0.4837910676 @ ETH/USD=435.65 gasPrice=2 gwei block=2615 txIx=0 txId=0x746c3230cd043fe9b12bb21c7b19f0df335c69a4d6face3de54540f986d00254 @ 1533661707 Tue, 07 Aug 2018 17:08:27 UTC
-timestampSchedulerTx status=0x1 Success gas=6000000 gasUsed=555252 costETH=0.001110504 costUSD=0.4837910676 @ ETH/USD=435.65 gasPrice=2 gwei block=2615 txIx=1 txId=0x365dcce3c9ac67b0fc5b06e07b96ee29bc3a396776ed06c4740966b4abc08bed @ 1533661707 Tue, 07 Aug 2018 17:08:27 UTC
+blockSchedulerTx status=0x1 Success gas=6000000 gasUsed=555252 costETH=0.001110504 costUSD=0.4837910676 @ ETH/USD=435.65 gasPrice=2 gwei block=1124 txIx=0 txId=0xb4d8010e57135655a2f9ab3bb61c3424b6ce56a0f5e9882dd7d58ca9ef860479 @ 1535352600 Mon, 27 Aug 2018 06:50:00 UTC
+timestampSchedulerTx status=0x1 Success gas=6000000 gasUsed=555252 costETH=0.001110504 costUSD=0.4837910676 @ ETH/USD=435.65 gasPrice=2 gwei block=1124 txIx=1 txId=0xcf806a5afb9d61bce1fa05a570eaf710ce1129f90f8e4f435a881dd05a5eaad3 @ 1535352600 Mon, 27 Aug 2018 06:50:00 UTC
 
 ---------- Schedule Delayed Payment ----------
-delayedPayment.payment=0x3e4fe045388680001a157f1087a01cb9cdf07038
-requestFactoryContractAddress=0x8ec74bd85e826da968766d2e57e101bf84f97abe
-get RequestCreated 0 #2617 {"bucket":"-2400","owner":"0x4c724bc2420dda47180669e5f9875a3385a01c42","params":["20000000000","20000000000","255","10","16","1","255","2637","200000","0","20000000000","40000000000"],"request":"0x3e4fe045388680001a157f1087a01cb9cdf07038"}
-got RequestCreated=0x3e4fe045388680001a157f1087a01cb9cdf07038
+delayedPayment.payment=0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec
+requestFactoryContractAddress=0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87
+get RequestCreated 0 #1126 {"bucket":"-960","owner":"0x116c90e2450be6f03b157485c69c8c12cf78d8cb","params":["20000000000","20000000000","255","10","16","1","255","1146","200000","0","20000000000","40000000000"],"request":"0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec"}
+got RequestCreated=0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.012626704000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.010812672000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.013081468000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.011266614000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2 - Fee Recipient
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.017705925200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.017706747200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #4 - Payment Recipient
  5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #5 - Executor
  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #6
@@ -185,36 +185,36 @@ got RequestCreated=0x3e4fe045388680001a157f1087a01cb9cdf07038
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
-18 0x8ec74bd85e826da968766d2e57e101bf84f97abe        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
-19 0x035297a53be1d92aae03595bd3dc98e804c0b41d        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
-20 0x21418566cfdcfd0bc9d55218032cc7ac18f746e3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
-21 0x4c724bc2420dda47180669e5f9875a3385a01c42       10.008291853200000000           0.000000000000000000           0.000000000000000000 DelayedPayment
-22 0x3e4fe045388680001a157f1087a01cb9cdf07038        0.007600040000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+18 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
+19 0x611d3a5ac803dfb0acc68264d83538fef62fc5f8        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
+20 0x24ad1371437980d21a8ebf2e46a824b860a6d47c        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
+21 0x116c90e2450be6f03b157485c69c8c12cf78d8cb       10.008291853200000000           0.000000000000000000           0.000000000000000000 DelayedPayment
+22 0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec        0.007600040000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Schedule Delayed Payment
-delayedPaymentTx status=0x1 Success gas=6000000 gasUsed=907016 costETH=0.001814032 costUSD=0.7902830408 @ ETH/USD=435.65 gasPrice=2 gwei block=2617 txIx=0 txId=0xe0697ed4add1508c505fc5bde49b11fb81cd68b1e6f79209d2647d98a9a68582 @ 1533661709 Tue, 07 Aug 2018 17:08:29 UTC
-requestFactory.Address=0x8ec74bd85e826da968766d2e57e101bf84f97abe
-requestFactory.transactionRequestCore=0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3
+delayedPaymentTx status=0x1 Success gas=6000000 gasUsed=907427 costETH=0.001814854 costUSD=0.7906411451 @ ETH/USD=435.65 gasPrice=2 gwei block=1126 txIx=0 txId=0xc8676bfe235bf61f2b594d08345678117ff58ecbf54eb730293825d1126f983c @ 1535352602 Mon, 27 Aug 2018 06:50:02 UTC
+requestFactory.Address=0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87
+requestFactory.transactionRequestCore=0x332ceb425309f4ab99839300329a9626983323be
 requestFactory.BLOCKS_BUCKET_SIZE=240
 requestFactory.TIMESTAMP_BUCKET_SIZE=3600
-RequestCreated 0 #2617 {"bucket":"-2400","owner":"0x4c724bc2420dda47180669e5f9875a3385a01c42","params":["20000000000","20000000000","255","10","16","1","255","2637","200000","0","20000000000","40000000000"],"request":"0x3e4fe045388680001a157f1087a01cb9cdf07038"}
+RequestCreated 0 #1126 {"bucket":"-960","owner":"0x116c90e2450be6f03b157485c69c8c12cf78d8cb","params":["20000000000","20000000000","255","10","16","1","255","1146","200000","0","20000000000","40000000000"],"request":"0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec"}
 
 ---------- Claim Delayed Payment ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.012804188000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.010812672000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.013258952000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.011266614000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #2 - Fee Recipient
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.017705925200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.017706747200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
  4 0xa44a08d3f6933c69212114bb66e2df1813651844        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #4 - Payment Recipient
  5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.100177484000000000           0.000000000000000000           0.000000000000000000 Account #5 - Executor
  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #6
@@ -223,31 +223,31 @@ RequestCreated 0 #2617 {"bucket":"-2400","owner":"0x4c724bc2420dda47180669e5f987
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
-18 0x8ec74bd85e826da968766d2e57e101bf84f97abe        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
-19 0x035297a53be1d92aae03595bd3dc98e804c0b41d        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
-20 0x21418566cfdcfd0bc9d55218032cc7ac18f746e3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
-21 0x4c724bc2420dda47180669e5f9875a3385a01c42       10.008291853200000000           0.000000000000000000           0.000000000000000000 DelayedPayment
-22 0x3e4fe045388680001a157f1087a01cb9cdf07038        0.107600040000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+18 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
+19 0x611d3a5ac803dfb0acc68264d83538fef62fc5f8        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
+20 0x24ad1371437980d21a8ebf2e46a824b860a6d47c        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
+21 0x116c90e2450be6f03b157485c69c8c12cf78d8cb       10.008291853200000000           0.000000000000000000           0.000000000000000000 DelayedPayment
+22 0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec        0.107600040000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Claim Delayed Payment
-claim1_1Tx status=0x1 Success gas=400000 gasUsed=88742 costETH=0.000177484 costUSD=0.0773209046 @ ETH/USD=435.65 gasPrice=2 gwei block=2619 txIx=0 txId=0xd600cf43ca03eb543d1f174ef9ead9846ccb1b8500e564ceccd7c412a61b6c46 @ 1533661711 Tue, 07 Aug 2018 17:08:31 UTC
+claim1_1Tx status=0x1 Success gas=400000 gasUsed=88742 costETH=0.000177484 costUSD=0.0773209046 @ ETH/USD=435.65 gasPrice=2 gwei block=1128 txIx=0 txId=0xa4523ca23c7f9e87e50b67cc03753ede9ed18ad61544bc4fac5540cf28c550da @ 1535352604 Mon, 27 Aug 2018 06:50:04 UTC
 ----- TxRequest 'Claim Delayed Payment' -----
-txRequest.address=0x3e4fe045388680001a157f1087a01cb9cdf07038
+txRequest.address=0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec
   claimData.claimedBy=0xa55a151eb00fded1634d27d1127b4be4627079ea
-  meta.createdBy=0x035297a53be1d92aae03595bd3dc98e804c0b41d
-  meta.owner=0x4c724bc2420dda47180669e5f9875a3385a01c42
+  meta.createdBy=0x611d3a5ac803dfb0acc68264d83538fef62fc5f8
+  meta.owner=0x116c90e2450be6f03b157485c69c8c12cf78d8cb
   paymentData.feeRecipient=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976
   paymentData.bountyBenefactor=0x0000000000000000000000000000000000000000
-  txnData.toAddress=0x4c724bc2420dda47180669e5f9875a3385a01c42
+  txnData.toAddress=0x116c90e2450be6f03b157485c69c8c12cf78d8cb
   meta.isCancelled=false
   meta.wasCalled=false
   meta.wasSuccessful=false
@@ -257,66 +257,66 @@ txRequest.address=0x3e4fe045388680001a157f1087a01cb9cdf07038
   paymentData.bounty=0.000000020000000000 20000000000
   paymentData.bountyOwed=0.000000000000000000 0
   schedule.claimWindowSize=255
-  (schedule.firstClaimBlock=2372 = freezeStart-claimWindowSize)
+  (schedule.firstClaimBlock=881 = freezeStart-claimWindowSize)
   schedule.freezePeriod=10
-  (schedule.freezeStart=2627) = windowStart - freezePeriod
+  (schedule.freezeStart=1136) = windowStart - freezePeriod
   schedule.reservedWindowSize=16
-  (schedule.reservedWindowEnd=2653) = windowStart + reserveWindowSize
+  (schedule.reservedWindowEnd=1162) = windowStart + reserveWindowSize
   schedule.temporalUnit=1
   schedule.windowSize=255
-  schedule.windowStart=2637
-  (schedule.windowEnd=2892) = windowStart + windowSize
+  schedule.windowStart=1146
+  (schedule.windowEnd=1401) = windowStart + windowSize
   txnData.callGas=200000
   txnData.callValue=0
   txnData.gasPrice=0.000000020000000000 20000000000
   claimData.requiredDeposit=0.000000040000000000 40000000000
   claimData.paymentModifier=96
   txnData.callData=0x
-txRequest.Claimed 0 #2619 {}
+txRequest.Claimed 0 #1128 {}
 
-Waiting until 'Wait to execute' #2617+20=#2638 currentBlock=2619
-Waited until 'Wait to execute' #2617+20=#2638 currentBlock=2639
+Waiting until 'Wait to execute' #1126+20=#1147 currentBlock=1128
+Waited until 'Wait to execute' #1126+20=#1147 currentBlock=1148
 
 ---------- Execute Delayed Payment ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.015167028000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.010812672000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.036887352000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.011266614000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000020000000000           0.000000000000000000           0.000000000000000000 Account #2 - Fee Recipient
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.017705925200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.017706747200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
  4 0xa44a08d3f6933c69212114bb66e2df1813651844       10.000000000000000000           0.000000000000000000           0.000000000000000000 Account #4 - Payment Recipient
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.001478355200000000           0.000000000000000000           0.000000000000000000 Account #5 - Executor
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.019787204800000000           0.000000000000000000           0.000000000000000000 Account #5 - Executor
  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #6
  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #7
  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #8
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
-18 0x8ec74bd85e826da968766d2e57e101bf84f97abe        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
-19 0x035297a53be1d92aae03595bd3dc98e804c0b41d        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
-20 0x21418566cfdcfd0bc9d55218032cc7ac18f746e3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
-21 0x4c724bc2420dda47180669e5f9875a3385a01c42        0.011873194000000000           0.000000000000000000           0.000000000000000000 DelayedPayment
-22 0x3e4fe045388680001a157f1087a01cb9cdf07038        0.000000000000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+18 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
+19 0x611d3a5ac803dfb0acc68264d83538fef62fc5f8        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
+20 0x24ad1371437980d21a8ebf2e46a824b860a6d47c        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
+21 0x116c90e2450be6f03b157485c69c8c12cf78d8cb        0.011873194000000000           0.000000000000000000           0.000000000000000000 DelayedPayment
+22 0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec        0.000000000000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
 PASS Execute Delayed Payment
-execute1_1Tx status=0x1 Success gas=400000 gasUsed=118142 costETH=0.00236284 costUSD=1.029371246 @ ETH/USD=435.65 gasPrice=20 gwei block=2641 txIx=0 txId=0x8f19c7c64082381ff0c9a411513a5b624a5a5679cd4402a1e1625d41f41b8980 @ 1533661733 Tue, 07 Aug 2018 17:08:53 UTC
+execute1_1Tx status=0x1 Success gas=400000 gasUsed=118142 costETH=0.0236284 costUSD=10.29371246 @ ETH/USD=435.65 gasPrice=200 gwei block=1150 txIx=0 txId=0xcfd54a8995f1c9992569e031ebf9c040fc69dfab680a36d5d5f61e64d65a39a5 @ 1535352626 Mon, 27 Aug 2018 06:50:26 UTC
 ----- TxRequest 'Execute Delayed Payment' -----
-txRequest.address=0x3e4fe045388680001a157f1087a01cb9cdf07038
+txRequest.address=0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec
   claimData.claimedBy=0xa55a151eb00fded1634d27d1127b4be4627079ea
-  meta.createdBy=0x035297a53be1d92aae03595bd3dc98e804c0b41d
-  meta.owner=0x4c724bc2420dda47180669e5f9875a3385a01c42
+  meta.createdBy=0x611d3a5ac803dfb0acc68264d83538fef62fc5f8
+  meta.owner=0x116c90e2450be6f03b157485c69c8c12cf78d8cb
   paymentData.feeRecipient=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976
   paymentData.bountyBenefactor=0xa55a151eb00fded1634d27d1127b4be4627079ea
-  txnData.toAddress=0x4c724bc2420dda47180669e5f9875a3385a01c42
+  txnData.toAddress=0x116c90e2450be6f03b157485c69c8c12cf78d8cb
   meta.isCancelled=false
   meta.wasCalled=true
   meta.wasSuccessful=true
@@ -326,62 +326,63 @@ txRequest.address=0x3e4fe045388680001a157f1087a01cb9cdf07038
   paymentData.bounty=0.000000020000000000 20000000000
   paymentData.bountyOwed=0.000000000000000000 0
   schedule.claimWindowSize=255
-  (schedule.firstClaimBlock=2372 = freezeStart-claimWindowSize)
+  (schedule.firstClaimBlock=881 = freezeStart-claimWindowSize)
   schedule.freezePeriod=10
-  (schedule.freezeStart=2627) = windowStart - freezePeriod
+  (schedule.freezeStart=1136) = windowStart - freezePeriod
   schedule.reservedWindowSize=16
-  (schedule.reservedWindowEnd=2653) = windowStart + reserveWindowSize
+  (schedule.reservedWindowEnd=1162) = windowStart + reserveWindowSize
   schedule.temporalUnit=1
   schedule.windowSize=255
-  schedule.windowStart=2637
-  (schedule.windowEnd=2892) = windowStart + windowSize
+  schedule.windowStart=1146
+  (schedule.windowEnd=1401) = windowStart + windowSize
   txnData.callGas=200000
   txnData.callValue=0
   txnData.gasPrice=0.000000020000000000 20000000000
   claimData.requiredDeposit=0.000000040000000000 40000000000
   claimData.paymentModifier=96
   txnData.callData=0x
-txRequest.Executed 0 #2641 {"bounty":"104018679200000000","fee":"20000000000","measuredGasConsumption":"200933"}
+txRequest.Executed 0 #1150 {"bounty":"104018679200000000","fee":"20000000000","measuredGasConsumption":"200933"}
 
 ---------- Send Owner Ethers ----------
  # Account                                             EtherBalanceChange                 (Token A) WETH                  (Token B) DAI Name
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
- 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.015226190000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
- 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.010812672000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
+ 0 0xa00af22d07c87d96eeeb0ed583f8f6ac7812827e        0.036946514000000000           0.000000000000000000           0.000000000000000000 Account #0 - Miner
+ 1 0xa11aae29840fbb5c86e6fd4cf809eba183aef433       -0.011266614000000000           0.000000000000000000           0.000000000000000000 Account #1 - Contract Owner
  2 0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976        0.000000020000000000           0.000000000000000000           0.000000000000000000 Account #2 - Fee Recipient
- 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.005891893200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
+ 3 0xa33a6c312d9ad0e0f2e95541beed0cc081621fd0      -10.005892715200000000           0.000000000000000000           0.000000000000000000 Account #3 - Schedule Creator
  4 0xa44a08d3f6933c69212114bb66e2df1813651844       10.000000000000000000           0.000000000000000000           0.000000000000000000 Account #4 - Payment Recipient
- 5 0xa55a151eb00fded1634d27d1127b4be4627079ea        0.001478355200000000           0.000000000000000000           0.000000000000000000 Account #5 - Executor
+ 5 0xa55a151eb00fded1634d27d1127b4be4627079ea       -0.019787204800000000           0.000000000000000000           0.000000000000000000 Account #5 - Executor
  6 0xa66a85ede0cbe03694aa9d9de0bb19c99ff55bd9        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #6
  7 0xa77a2b9d4b1c010a22a7c565dc418cef683dbcec        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #7
  8 0xa88a05d2b88283ce84c8325760b72a64591279a2        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #8
  9 0xa99a0ae3354c06b1459fd441a32a3f71005d7da0        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #9
 10 0xaaaa9de1e6c564446ebca0fd102d8bd92093c756        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #10
 11 0xabba43e7594e3b76afb157989e93c6621497fd4b        0.000000000000000000           0.000000000000000000           0.000000000000000000 Account #11
-12 0x8970bbfd1a54ae581064ab34e7910dab7e86172f        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
-13 0x6b8bba219f069b3dd5920e6d6958071eb9b8bc50        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
-14 0x2484679c29325eaf2f2e91d661e5413d47c04660        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
-15 0x0779c66d49a48e162bc0c7244b3baef8a2eba1ef        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
-16 0x1b8b7961968285d8e0bc6580e101b495b5ad166f        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
-17 0xdd762bbc7c44eed484cd5145c0bbc8d02eb4dcc3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
-18 0x8ec74bd85e826da968766d2e57e101bf84f97abe        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
-19 0x035297a53be1d92aae03595bd3dc98e804c0b41d        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
-20 0x21418566cfdcfd0bc9d55218032cc7ac18f746e3        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
-21 0x4c724bc2420dda47180669e5f9875a3385a01c42        0.000000000000000000           0.000000000000000000           0.000000000000000000 DelayedPayment
-22 0x3e4fe045388680001a157f1087a01cb9cdf07038        0.000000000000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
+12 0x94ed3af45741cb4d67d12006373ecbbe265f958d        0.000000000000000000           0.000000000000000000           0.000000000000000000 MathLib
+13 0xe6faa6fd9baba50ebb05eadc8fad293e4d30d32d        0.000000000000000000           0.000000000000000000           0.000000000000000000 PaymentLib
+14 0xf235febef748bc1586d8aea01f093012eea7b3c8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestScheduleLib
+15 0x27daa9fe81944d721dc95e09f54c8bd3a90a5603        0.000000000000000000           0.000000000000000000           0.000000000000000000 IterTools
+16 0x5029cacf1799deb161dc3ab611b2b368c06f15e8        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestLib
+17 0x332ceb425309f4ab99839300329a9626983323be        0.000000000000000000           0.000000000000000000           0.000000000000000000 TransactionRequestCore
+18 0xd8dc1b690f36cf38e8032d751343c9e4df9bdf87        0.000000000000000000           0.000000000000000000           0.000000000000000000 RequestFactory
+19 0x611d3a5ac803dfb0acc68264d83538fef62fc5f8        0.000000000000000000           0.000000000000000000           0.000000000000000000 BlockScheduler
+20 0x24ad1371437980d21a8ebf2e46a824b860a6d47c        0.000000000000000000           0.000000000000000000           0.000000000000000000 TimestampScheduler
+21 0x116c90e2450be6f03b157485c69c8c12cf78d8cb        0.000000000000000000           0.000000000000000000           0.000000000000000000 DelayedPayment
+22 0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec        0.000000000000000000           0.000000000000000000           0.000000000000000000 DelayedPaymentRequest
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
                                                                                     0.000000000000000000           0.000000000000000000 Total Token Balances
 -- ------------------------------------------ --------------------------- ------------------------------ ------------------------------ ---------------------------
 
-collectRemaining1_1Tx status=0x1 Success gas=400000 gasUsed=29581 costETH=0.000059162 costUSD=0.0257739253 @ ETH/USD=435.65 gasPrice=2 gwei block=2643 txIx=0 txId=0x1815f9da9e2db784b72232a5386fe5d8ada3f1efacaa00455b8a4f16e93bb764 @ 1533661735 Tue, 07 Aug 2018 17:08:55 UTC
+PASS Send Owner Ethers
+collectRemaining1_1Tx status=0x1 Success gas=400000 gasUsed=29581 costETH=0.000059162 costUSD=0.0257739253 @ ETH/USD=435.65 gasPrice=2 gwei block=1152 txIx=0 txId=0xbdf10dfc4af990eb55e2aa2b7e13b108df2edcdf264864cdb2fa50c32e6abc13 @ 1535352628 Mon, 27 Aug 2018 06:50:28 UTC
 ----- TxRequest 'Send Owner Ethers' -----
-txRequest.address=0x3e4fe045388680001a157f1087a01cb9cdf07038
+txRequest.address=0xc5296efc04a152de6ca6040fe20eeaf11a34a3ec
   claimData.claimedBy=0xa55a151eb00fded1634d27d1127b4be4627079ea
-  meta.createdBy=0x035297a53be1d92aae03595bd3dc98e804c0b41d
-  meta.owner=0x4c724bc2420dda47180669e5f9875a3385a01c42
+  meta.createdBy=0x611d3a5ac803dfb0acc68264d83538fef62fc5f8
+  meta.owner=0x116c90e2450be6f03b157485c69c8c12cf78d8cb
   paymentData.feeRecipient=0xa22ab8a9d641ce77e06d98b7d7065d324d3d6976
   paymentData.bountyBenefactor=0xa55a151eb00fded1634d27d1127b4be4627079ea
-  txnData.toAddress=0x4c724bc2420dda47180669e5f9875a3385a01c42
+  txnData.toAddress=0x116c90e2450be6f03b157485c69c8c12cf78d8cb
   meta.isCancelled=false
   meta.wasCalled=true
   meta.wasSuccessful=true
@@ -391,15 +392,15 @@ txRequest.address=0x3e4fe045388680001a157f1087a01cb9cdf07038
   paymentData.bounty=0.000000020000000000 20000000000
   paymentData.bountyOwed=0.000000000000000000 0
   schedule.claimWindowSize=255
-  (schedule.firstClaimBlock=2372 = freezeStart-claimWindowSize)
+  (schedule.firstClaimBlock=881 = freezeStart-claimWindowSize)
   schedule.freezePeriod=10
-  (schedule.freezeStart=2627) = windowStart - freezePeriod
+  (schedule.freezeStart=1136) = windowStart - freezePeriod
   schedule.reservedWindowSize=16
-  (schedule.reservedWindowEnd=2653) = windowStart + reserveWindowSize
+  (schedule.reservedWindowEnd=1162) = windowStart + reserveWindowSize
   schedule.temporalUnit=1
   schedule.windowSize=255
-  schedule.windowStart=2637
-  (schedule.windowEnd=2892) = windowStart + windowSize
+  schedule.windowStart=1146
+  (schedule.windowEnd=1401) = windowStart + windowSize
   txnData.callGas=200000
   txnData.callValue=0
   txnData.gasPrice=0.000000020000000000 20000000000

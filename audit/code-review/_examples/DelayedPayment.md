@@ -8,7 +8,7 @@ Source file [../../../contracts/_examples/DelayedPayment.sol](../../../contracts
 
 ```solidity
 // BK Ok
-pragma solidity ^0.4.24;
+pragma solidity 0.4.24;
 
 // BK Ok
 import "contracts/Interface/SchedulerInterface.sol";

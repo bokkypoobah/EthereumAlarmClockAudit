@@ -16,6 +16,8 @@ No potential vulnerabilities have been identified in the EAC smart contracts.
 
 There is one outstanding **LOW IMPORTANCE** issue to resolve to improve the *RecurringPayment* example and Chronologic have responded that this will be completed in the near future.
 
+There are also two outstanding **LOW IMPORTANCE** issues to resolve to improve the *DelayedPayment* example.
+
 <br />
 
 <hr />
@@ -47,7 +49,7 @@ There is one outstanding **LOW IMPORTANCE** issue to resolve to improve the *Rec
   * [x] Added in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
 * [x] **LOW IMPORTANCE** The comments for `PaymentLib.validateEndowment(...)` referring to *maxMultiplier* may be out of date
   * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
-* [x] **LOW IMPORTANCE** ClaimLib.claim(...) has a `bool` return status that is not set, and is not used in `RequestLib.claim(...)`
+* [x] **LOW IMPORTANCE** `ClaimLib.claim(...)` has a `bool` return status that is not set, and is not used in `RequestLib.claim(...)`
   * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
 * [x] **LOW IMPORTANCE** The comment for `RequestScheduleLib.isBeforeClaimWindow(...)` refers to *freeze period* but should refer to *claim period*
   * [x] Updated in [a7c70b4](https://github.com/ethereum-alarm-clock/ethereum-alarm-clock/commit/a7c70b4198bdbe1e634058de247640989d84c3c8)
@@ -60,6 +62,8 @@ There is one outstanding **LOW IMPORTANCE** issue to resolve to improve the *Rec
 * [x] **NOTE** Note that if there is a input parameter validation error, the `ValidationError(...)` events from *RequestFactory* will never get generated because `BaseScheduler.schedule(...)` will throw an error if the validation fails, and the event logs will not be persisted on the blockchain
 * [ ] **LOW IMPORTANCE** The *RecurringPayment* example contract will need to be updated to remove the same residual amount issue as already resolved in the *DelayedPayment* contract
   * [ ] Chronologic have responded that this will be completed in the near future
+* [ ] **LOW IMPORTANCE** `DelayedPayment.payout()` - If the ETH deposited in this contract >= 2 x value, the integer multiple excess over the value can be sent to the recipient, and this can be called by anyone once the lockedUntil time is passed. Normally the user scheduling the payment should not send much more than the required scheduled payment.
+* [ ] **LOW IMPORTANCE** `DelayedPayment.collectRemaining()` - This can be called by anyone anytime and will send the ETH back to the owner, causing the future scheduled payments to fail
 
 <br />
 
@@ -272,16 +276,16 @@ schedule.windowStart=364
 Check exit points for ethers:
 
 #### Core
-* [ ] RequestFactory.sol: msg.sender.transfer(msg.value);
-* [ ] Library/ClaimLib.sol: return self.claimedBy.send(depositAmount);
+* [x] RequestFactory.sol: msg.sender.transfer(msg.value);
+* [x] Library/ClaimLib.sol: return self.claimedBy.send(depositAmount);
 * [x] Library/PaymentLib.sol: return self.feeRecipient.send(feeAmount);
 * [x] Library/PaymentLib.sol: return self.bountyBenefactor.send(bountyAmount);
-* [ ] Library/RequestLib.sol: rewardBenefactor.transfer(rewardOwed);
-* [ ] Library/RequestLib.sol: return recipient.send(ownerRefund);
+* [x] Library/RequestLib.sol: rewardBenefactor.transfer(rewardOwed);
+* [x] Library/RequestLib.sol: return recipient.send(ownerRefund);
 
 #### Examples
-* [ ] _examples/DelayedPayment.sol: recipient.transfer(address(this).balance);
-* [ ] _examples/RecurringPayment.sol: recipient.transfer(paymentValue);
+* [x] _examples/DelayedPayment.sol: recipient.transfer(address(this).balance);
+* [ ] _examples/RecurringPayment.sol: recipient.transfer(paymentValue); (to be updated)
 
 <br />
 
@@ -305,7 +309,7 @@ Check exit points for ethers:
 
 * [x] [code-review/_examples/DelayedPayment.md](code-review/_examples/DelayedPayment.md)
   * [x] contract DelayedPayment
-* [ ] [code-review/_examples/RecurringPayment.md](code-review/_examples/RecurringPayment.md)
+* [ ] [code-review/_examples/RecurringPayment.md](code-review/_examples/RecurringPayment.md) (to be updated)
   * [ ] contract RecurringPayment
 
 <br />

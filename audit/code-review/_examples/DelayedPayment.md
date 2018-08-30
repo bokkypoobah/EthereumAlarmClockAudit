@@ -89,6 +89,8 @@ contract DelayedPayment {
     }
 
     // BK Ok
+    // BK NOTE - If the ETH deposited in this contract >= 2 x value, the integer multiple excess over the value can be sent
+    // BK NOTE - to the recipient, and this can be called by anyone once the lockedUntil time is passed  
     function payout()
         public returns (bool)
     {
@@ -101,9 +103,12 @@ contract DelayedPayment {
         return true;
     }
 
+    // BK Ok - Anyone can execute whenever, but only the owner gets the balance
+    // BK NOTE - This can be called by anyone anytime and will send the ETH back to the owner, causing the future scheduled payments to fail
     function collectRemaining()
         public returns (bool) 
     {
+    	// BK Ok
         owner.transfer(address(this).balance);
     }
 }

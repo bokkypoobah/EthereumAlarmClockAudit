@@ -207,6 +207,8 @@ highlight any areas of weaknesses.
 
 ## Risks
 
+None identified in the EAC framework. Users of EAC are able to deploy their own payment smart contracts, and these should be validated independently for contracts holding larger amounts of ETH and/or tokens.
+
 <br />
 
 <hr />
